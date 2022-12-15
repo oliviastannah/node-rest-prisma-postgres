@@ -11,12 +11,12 @@ app.post("/job", async (req, res) => {
   res.json(job);
 });
 
-app.get("/", async (req, res) => {
+app.get("/jobs", async (req, res) => {
   const job = await prisma.job.findMany();
   res.json(job);
 });
 
-const port = process.env.PORT || "3000";
+const port = process.env.PORT || "3001";
 
 app.listen(port, () => {
   console.log(`Server Running at ${port} 🚀`);
